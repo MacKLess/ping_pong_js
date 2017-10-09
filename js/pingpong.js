@@ -12,7 +12,7 @@ Calculator.prototype.pingPong = function(goal) {
     } else if (i % 5 === 0) {
       output.push("pong");
     } else {
-      output.push("i");
+      output.push(i);
     }
   }
   return output;

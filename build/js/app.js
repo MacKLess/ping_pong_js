@@ -13,7 +13,7 @@ Calculator.prototype.pingPong = function(goal) {
     } else if (i % 5 === 0) {
       output.push("pong");
     } else {
-      output.push("i");
+      output.push(i);
     }
   }
   return output;
@@ -27,9 +27,10 @@ var Calculator = require('./../js/pingpong.js').calculatorModule;
 $(document).ready(function() {
   $('#ping-pong-form').submit(function(event) {
     event.preventDefault();
-    var goal = $('#goal').val();
+    var goal = parseInt($('#goal').val());
     var simpleCalculator = new Calculator("hot pink");
     var output = simpleCalculator.pingPong(goal);
+    console.log(output);
     output.forEach(function(element) {
       $('#solution').append("<li>" + element + "</li>");
     });
